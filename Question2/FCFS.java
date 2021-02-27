@@ -2,7 +2,11 @@ package Question2;
 
 public class FCFS {
 	
-//	This function returns the completion time array.
+	/**
+	 * This function calculate the completion time for every process.
+	 * @param process 2D array of processes with arrival time and burst time in sorted order of arrival time.
+	 * @return completionTimeArr an array with completion time of each process.
+	 */
 	public static int[] getCompletionTime(int[][] process){
 		int processCount = process.length;
 		int [] completionTimeArr = new int[processCount];
@@ -21,7 +25,11 @@ public class FCFS {
 	}
 	
 	
-//	This function is used to calculate TurnAround Time for every process and return an array.
+	/**
+	 * This function calculate the Turn Around time for each process.
+	 * @param process  2D array of processes with arrival time and burst time in sorted order of arrival time.
+	 * @return turnAroundTimeArr  1D array with turn around timings for each process.
+	 */
 	public static int[] getTurnAroundTime(int[][] process){
 		int[] completionTimeArr = getCompletionTime(process);
 		int[] turnAroundTimeArr = new int[completionTimeArr.length];
@@ -31,7 +39,11 @@ public class FCFS {
 		return turnAroundTimeArr;
 	}
 	
-//	This function calculates waiting time for each process and returns the waitingTime array.
+	/**
+	 * This function calculates the waiting time for each process.
+	 * @param process 2D array of processes with arrival time and burst time in sorted order of arrival time.
+	 * @return waitingTimeArr 1D array with waiting time of every process.
+	 */
 	public static int[] getWaitingTime(int[][] process){
 		int[] turnAroundTimeArr = getTurnAroundTime(process);
 		int[] waitingTimeArr = new int[turnAroundTimeArr.length];
@@ -45,7 +57,11 @@ public class FCFS {
 		return waitingTimeArr;
 	}
 	
-//	This function returns the Average Waiting Time for all the process.
+	/**
+	 * Calculates the average waiting time.
+	 * @param process 2D array of processes with arrival time and burst time in sorted order of arrival time.
+	 * @return a double value equivalent to average waiting time for all the processes.
+	 */
 	public static double getAverageWaitingTime(int[][] process){
 		int[] waitingTimeArr = getWaitingTime(process);
 		int totalWaitingTime = 0;
@@ -56,7 +72,11 @@ public class FCFS {
 	}
 	
 	
-//	This function returns the Maximum Waiting Time.
+	/**
+	 * To fetch maximum waiting time for given processes.
+	 * @param process 2D array of processes with arrival time and burst time in sorted order of arrival time.
+	 * @return integer which gives the maximum waiting time for a process in the queue.
+	 */
 	public static int getMaxWaitingTime(int[][] process){
 		int[] waitingTimeArr = getWaitingTime(process);
 		int maxWaitingTime = waitingTimeArr[0];
