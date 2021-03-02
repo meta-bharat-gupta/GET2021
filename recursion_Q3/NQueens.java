@@ -2,33 +2,33 @@ package recursion_Q3;
 
 public class NQueens {
 	
-	private static boolean isSafe(int[][] board, int rows, int cols, int number){
-		for(int row=0; row<rows; row++){
-			if(board[row][cols]==1){
+	private static boolean isSafe(int[][] board, int row, int col, int number){
+		for(int x=0; x<row; x++){
+			if(board[x][col]==1){
 				return false;
 			}
 		}
 		
-		int row = rows;
-		int col = cols;
+		int x = row;
+		int y = col;
 		
-		while(row>=0 && col>=0){
-			if(board[row][col]==1){
+		while(x>=0 && y>=0){
+			if(board[x][y]==1){
 				return false;
 			}
-			row--;
-			col--;
+			x--;
+			y--;
 		}
 		
-		row = rows;
-		col = cols;
+		x = row;
+		y = col;
 		
-		while(row>=0 && row<number){
-			if(board[row][col]==1){
+		while(x>=0 && y<number){
+			if(board[x][y]==1){
 				return false;
 			}
-			row--;
-			col++;
+			x--;
+			y++;
 		}
 		return true;
 	}
