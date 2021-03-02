@@ -1,8 +1,11 @@
 package assignment3_Q1;
 
+import static java.lang.System.out;
+
 final public class intSet {
 	private final int[] set = new int[1000];
 	private final int length;
+	
 	
 	/**
 	 * Constructor to initialize intSet object.
@@ -22,6 +25,7 @@ final public class intSet {
 		this.length = len;
 	}
 	
+	
 	/**
 	 * To check whether given integer is a member of the set or not.
 	 * @param num
@@ -37,14 +41,15 @@ final public class intSet {
 		return false;
 	}
 	
+	
 	/**
 	 * To return size of the Set.
 	 * @return integer
 	 */
 	public int size(){
-		int len = this.length;
-		return len;
+		return this.length;
 	}
+	
 	
 	/**
 	 * To check whether the given intSet object is subset of the object or not.
@@ -63,6 +68,7 @@ final public class intSet {
 		return true;
 	}
 	
+	
 	/**
 	 * To compute the complement of the set.
 	 * @return 
@@ -80,17 +86,18 @@ final public class intSet {
 		return new intSet(array);
 	}
 	
+	
 	/**
 	 * To display the set object.
 	 */
 	public void print(){
 		if(this.length==0){
-			System.out.println("Empty Set");
+			out.println("Empty Set");
 		}else{
 			for(int i=0; i<this.length; i++){
 				System.out.print(set[i]+ " ");
 			}
-			System.out.println();
+			out.println();
 		}
 	}
 	

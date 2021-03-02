@@ -41,6 +41,7 @@ final public class Poly {
 		return new Poly(addPolyDegree, addPolyArr);
 	}
 	
+	
 	/**
 	 * To evaluate a Polynomial for given value.
 	 * @param value
@@ -55,6 +56,7 @@ final public class Poly {
 		}
 		return result;
 	}
+	
 	
 	/**
 	 * To multiply two Poly Object polynomials.
@@ -76,6 +78,7 @@ final public class Poly {
 		return new Poly(degree, mulPolyArr);
 	}
 	
+	
 	/**
 	 * To print the polynomial in a String format.
 	 */
@@ -91,13 +94,13 @@ final public class Poly {
 		return polyString;
 	}
 	
+	
 	/**
 	 * To return the degree of the polynomial.
 	 * @return
 	 */
 	public int degree(){
-		int degree = this.polyDegree;
-		return degree;
+		return this.polyDegree;
 	}
 	
 	
