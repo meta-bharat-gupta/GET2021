@@ -39,6 +39,7 @@ public class FCFS {
 		return turnAroundTimeArr;
 	}
 	
+	
 	/**
 	 * This function calculates the waiting time for each process.
 	 * @param process 2D array of processes with arrival time and burst time in sorted order of arrival time.
@@ -56,6 +57,7 @@ public class FCFS {
 		}
 		return waitingTimeArr;
 	}
+	
 	
 	/**
 	 * Calculates the average waiting time.

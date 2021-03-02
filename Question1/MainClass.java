@@ -1,20 +1,21 @@
 package Question1;
 
+import static java.lang.System.out;
 public class MainClass {
 	public static void main(String[] args) {
 		hexCalc first = new hexCalc("A1A");
 		hexCalc second = new hexCalc("0");
 		
-		System.out.println("Addition = " + first.add(second) );
-		System.out.println("Subtraction = " + first.subtract(second));
-		System.out.println("Multiplication = " + first.multiply(second));
-		System.out.println("Division = " + first.divide(second));
+		out.println("Addition = " + first.add(second) );
+		out.println("Subtraction = " + first.subtract(second));
+		out.println("Multiplication = " + first.multiply(second));
+		out.println("Division = " + first.divide(second));
 		
-		System.out.println("Decimal Value of First HexString = " + first.toDecimal());
-		System.out.println("Decimal Value of Second HexString = " + second.toDecimal());
+		out.println("Decimal Value of First HexString = " + first.toDecimal());
+		out.println("Decimal Value of Second HexString = " + second.toDecimal());
 		
-		System.out.println(hexCalc.isEqual(first, second));
-		System.out.println(hexCalc.isGreaterThan(first, second));
-		System.out.println(hexCalc.isLessThan(first, second));
+		out.println(hexCalc.isEqual(first, second));
+		out.println(hexCalc.isGreaterThan(first, second));
+		out.println(hexCalc.isLessThan(first, second));
 	}
 }
