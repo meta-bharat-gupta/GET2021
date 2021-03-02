@@ -1,7 +1,8 @@
 package assignment1;
 
+import static java.lang.System.out;
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class MainClass {
 	public static void main(String[] args) {
@@ -12,19 +13,18 @@ public class MainClass {
 		productList.add(new Product("Coke", 50, 25));
 
 		ShoppingCart userCart = new ShoppingCart();
-		Scanner sc = new Scanner(System.in);
 		
 		while(true) {
-			System.out.println("\n             Shopping Menu            ");
-			System.out.println("---------------------------------------");
-			System.out.println("1. To View Available Items in the Shop");
-			System.out.println("2. For Add Item in the Cart");
-			System.out.println("3. For View Items in the Cart");
-			System.out.println("4. For Update Items in the Cart");
-			System.out.println("5. For Generate Bill for the Cart");
-			System.out.println("6. For Exit");
-			System.out.println("Please Enter your choice : ");
-			int userChoice = sc.nextInt();
+			out.println("\n             Shopping Menu            ");
+			out.println("---------------------------------------");
+			out.println("1. To View Available Items in the Shop");
+			out.println("2. For Add Item in the Cart");
+			out.println("3. For View Items in the Cart");
+			out.println("4. For Update Items in the Cart");
+			out.println("5. For Generate Bill for the Cart");
+			out.println("6. For Exit");
+			out.println("Please Enter your choice : ");
+			int userChoice = ShoppingCart.readInteger();
 			
 			switch(userChoice) {
 				case 1:
@@ -32,15 +32,15 @@ public class MainClass {
 					break;
 				
 				case 2:
-					System.out.println("To Add Item, Enter the Item number: ");
-					int itemIndex = sc.nextInt();
+					out.println("To Add Item, Enter the Item number: ");
+					int itemIndex = ShoppingCart.readInteger();
 					if(itemIndex>0 && itemIndex<=productList.size()) {
-						System.out.println("Enter quantity: ");
-						int itemQuantity = sc.nextInt();
+						out.println("Enter quantity: ");
+						int itemQuantity = ShoppingCart.readInteger();
 						userCart.addItem(productList.get(itemIndex-1), itemQuantity);
 						break;						
 					}else {
-						System.out.println("Invalid Item number");
+						out.println("Invalid Item number");
 						break;
 					}
 				
@@ -50,9 +50,9 @@ public class MainClass {
 				
 				case 4:
 					if(userCart.updateCart(productList)) {
-						System.out.println("Cart Updated Successfully");
+						out.println("Cart Updated Successfully");
 					}else {
-						System.out.println("Oops! Cart updation failed");
+						out.println("Oops! Cart updation failed");
 					}
 					break;
 				
@@ -64,7 +64,7 @@ public class MainClass {
 					return;
 				
 				default:
-					System.out.println("Invalid Choice");
+					out.println("Invalid Choice");
 			}
 		}
 	}

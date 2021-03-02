@@ -36,7 +36,7 @@ public class Product {
 		this.price = price;
 	}
 
-	public String toString() {
+	public String productDescription() {
 		return "Item Name = "+this.name+ " Price = "+ price+" Quantity = "+this.quantity;
 	}
 }

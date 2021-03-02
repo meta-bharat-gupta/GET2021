@@ -1,27 +1,65 @@
 package assignment1;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Scanner;
+
+import static java.lang.System.out;
+
 
 //ShoppingCart class for managing shopping cart.
 public class ShoppingCart {
 	private ArrayList<Product> cart = new ArrayList<Product>();
 	
-//	This function will display available items in the Store for purchase.
+	/**
+	 * To read integer from input stream and check for wrong inputs.
+	 * @return
+	 * 		return input integer.
+	 */
+	public static int readInteger(){
+		int userChoice;
+		InputStreamReader userInput = new InputStreamReader(System.in);
+		BufferedReader bufferedReader = new BufferedReader(userInput);
+		while(true){
+			try{
+				userChoice = Integer.parseInt(bufferedReader.readLine());
+				break;
+			}catch(Exception e){
+				out.println("Wrong Input Type. Please try again.");
+			}
+		}
+		return userChoice;
+	}
+	
+	
+	/**
+	 * This function will display available items in the Store for purchase.
+	 * @param productList
+	 * 			ArrayList of Products.
+	 */
 	public static void displayItems(ArrayList<Product> productList) {
-		System.out.println("Item No.\tItem Name\tItem Price\tQuantity Available");
-		System.out.println("-------------------------------------------------------------");
+		out.println("Item No.\tItem Name\tItem Price\tQuantity Available");
+		out.println("-------------------------------------------------------------");
 		for(int i = 0; i<productList.size(); i++) {
-			System.out.println(i+1 +"\t\t"+ productList.get(i).getName() +"\t\t"+ productList.get(i).getPrice() +"\t\t"+ productList.get(i).getQuantity());
+			out.println(i+1 +"\t\t"+ productList.get(i).getName() +"\t\t"+ productList.get(i).getPrice() +"\t\t"+ productList.get(i).getQuantity());
 		}
 	}
 	
 	
-//	This function is used to add item in the shopping cart.
+	/**
+	 * This function is used to add item in the shopping cart.
+	 * @param item
+	 * 			Product which has to be added in the cart.
+	 * @param quantity
+	 * 			Product quantity
+	 */
 	public void addItem(Product item, int quantity) {
-		if(quantity>item.getQuantity() || quantity<=0 ) {
-			System.out.println("Invalid Quantity");
-		}else {
+		if(quantity>item.getQuantity()) {
+			out.println("Sorry, We are short on stock for these quantities.");
+		}else if(quantity<=0){
+			out.println("Invalid Quantity");
+		}
+		else {
 			cart.add(new Product(item.getName(), quantity, item.getPrice()));
 			int remainingQuantity = item.getQuantity() - quantity;
 			item.setQuantity(remainingQuantity);
@@ -29,21 +67,25 @@ public class ShoppingCart {
 	}
 	
 	
-//	This function is used to display the items of the cart.
+	/**
+	 * This function is used to display the items of the cart.
+	 */
 	public void displayCart() {
 		if(cart.isEmpty()) {
-			System.out.println("Your Cart is Empty.");
+			out.println("Your Cart is Empty.");
 		}else {
-			System.out.println("Item No.\tItem Name\tItem Price\tQuantity Available");
-			System.out.println("-------------------------------------------------------------");
+			out.println("Item No.\tItem Name\tItem Price\tQuantity Available");
+			out.println("-------------------------------------------------------------");
 			for(int i = 0; i<cart.size(); i++) {
-				System.out.println(i+1 +"\t\t"+ cart.get(i).getName() +"\t\t"+ cart.get(i).getPrice() +"\t\t"+ cart.get(i).getQuantity());
+				out.println(i+1 +"\t\t"+ cart.get(i).getName() +"\t\t"+ cart.get(i).getPrice() +"\t\t"+ cart.get(i).getQuantity());
 			}			
 		}
 	}
 	
 	
-//	This function is used to generate bill and total amount.
+	/**
+	 * This function is used to generate bill and total amount.
+	 */
 	public void generateBill() {
 		displayCart();
 		if(cart.isEmpty()) {
@@ -53,10 +95,16 @@ public class ShoppingCart {
 		for(Product item: cart) {
 			billAmount += item.getPrice()*item.getQuantity();
 		}
-		System.out.println("Grand Total = "+ billAmount);
+		out.println("Grand Total = "+ billAmount);
 	}
 	
-//	This function updates the cart like updating quantity of the product already available in cart.
+	/**
+	 * This function updates the cart like updating quantity of the product already available in cart.
+	 * @param productList
+	 * 			ArrayList of Product items available in the shop.
+	 * @return boolean
+	 * 			boolean whether cart update process is successful or not.
+	 */
 	public boolean updateCart(ArrayList<Product> productList) {
 		displayCart();
 		
@@ -64,12 +112,11 @@ public class ShoppingCart {
 			return false;
 		}
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Please Enter item number : ");
-		int itemIndex = sc.nextInt()-1;
+		out.println("Please Enter item number : ");
+		int itemIndex = readInteger()-1;
 		
 		if(itemIndex>=cart.size() || itemIndex<0) {
-			System.out.println("Invalid item number");
+			out.println("Invalid item number");
 			return false;
 		}
 		
@@ -81,11 +128,11 @@ public class ShoppingCart {
 		}
 		int productQuantity = productList.get(productIndex).getQuantity();
 		
-		System.out.println("Please Enter updated quantity : ");
-		int quantity = sc.nextInt();
+		out.println("Please Enter updated quantity : ");
+		int quantity = readInteger();
 		int previousQuantity = cart.get(itemIndex).getQuantity();
 		if(quantity<0 || quantity>productQuantity) {
-			System.out.println("Invalid Quantity or Desired Quantity not available.");
+			out.println("Invalid Quantity or Desired Quantity not available.");
 			return false;
 		}
 		if(quantity==0) {
