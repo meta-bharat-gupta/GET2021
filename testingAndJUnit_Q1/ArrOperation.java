@@ -124,7 +124,6 @@ public class ArrOperation {
 						array[index+1] = Y;
 						array[id] = temp;
 						yLastPos = id;
-						System.out.println("Y swap kr diya "+ id);
 						break;
 					}
 				}
