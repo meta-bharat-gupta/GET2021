@@ -112,25 +112,25 @@ public class MyLinkedList<E> {
 	}
 	
 	
-//	public E get(int index){
-//		E result= new E();
-//		if(index < 0){
-//			return result;
-//		}
-//		Node<E> tempNode = head;
-//		int temp = 0;
-//		while(tempNode.getNext()!=null){
-//			if(temp==index){
-//				result = tempNode.getData();
-//				break;
-//			}
-//			tempNode = tempNode.getNext();
-//			temp++;
-//		}
-//		if(temp==index){
-//			result = tempNode.getData();
-//		}
-//		return result;
-//	}
+	public E get(int index){
+		E result=null;
+		if(index<0){
+			result = null;
+		}
+		Node<E> tempNode = head;
+		int temp = 0;
+		while(tempNode.getNext()!=null){
+			if(temp==index){
+				result = tempNode.getData();
+				break;
+			}
+			tempNode = tempNode.getNext();
+			temp++;
+		}
+		if(temp==index){
+			result = tempNode.getData();
+		}
+		return result;
+	}
 
 }
