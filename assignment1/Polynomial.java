@@ -28,6 +28,11 @@ public class Polynomial {
 		return userChoice;
 	}
 	
+	/**
+	 * Function to get the degree of the polynomial.
+	 * @return integer
+	 * 			degree of the polynomial.
+	 */
 	public static int getDegree(){
 		int length = polynomial.size();
 		int degree = 0;
@@ -45,6 +50,8 @@ public class Polynomial {
 		return degree;
 	}
 	
+	
+	// main function to input the polynomial into the nested list.
 	public static void main(String[] args) {
 		out.println("Enter Number of Terms: ");
 		int noOfTerms = readInteger();

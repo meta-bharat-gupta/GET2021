@@ -1,5 +1,6 @@
 package assignment1;
 
+// Generic Node Class for Linked List Implementation
 public class Node<E> {
 	private E data;
 	private Node<E> next;

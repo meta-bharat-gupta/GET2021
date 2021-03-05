@@ -17,10 +17,9 @@ public class MainClass {
 		myLL.rotateClockwise(1,2 , 7);
 		myLL.print();
 		
-//		for(int i=0; i<7; i++){
-//			System.out.println(myLL.get(i));
-//		}
-//		
-//		System.out.println(myLL.hasLoop());
+		for(int i=0; i<7; i++){
+			System.out.println(myLL.get(i));
+		}
+		
 	}
 }

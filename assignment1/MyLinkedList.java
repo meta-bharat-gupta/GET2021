@@ -1,12 +1,24 @@
 package assignment1;
 
+// Linked List Implementation
 public class MyLinkedList<E> {
 	public Node<E> head;
 	
+	/**
+	 * function which checks whether Linked List is empty or not.
+	 * @return boolean
+	 * 			true if Linked List is empty otherwise false.
+	 */
 	public boolean isEmpty(){
 		return head==null;
 	}
 	
+	
+	/**
+	 * returns the size of the Linked List
+	 * @return integer
+	 * 			size of the linked list.
+	 */
 	public int size(){
 		int size = 1;
 		if(isEmpty()){
@@ -21,6 +33,12 @@ public class MyLinkedList<E> {
 		return size;
 	}
 	
+	
+	/**
+	 * Function to add an element into the Linked List
+	 * @param data
+	 * 			data which has to be stored in the node.
+	 */
 	public void add(E data){
 		Node<E> toAdd = new Node<E>(data);
 		if(isEmpty()){
@@ -34,6 +52,10 @@ public class MyLinkedList<E> {
 		temp.setNext(toAdd);
 	}
 	
+	
+	/**
+	 * To print the elements of the Linked List.
+	 */
 	public void print(){
 		Node<E> tempNode = head;
 		while(tempNode!=null){
@@ -42,6 +64,16 @@ public class MyLinkedList<E> {
 		}
 	}
 	
+	
+	/**
+	 * It rotates the elements of a Linked List clockwise from a starting Index to end Index.
+	 * @param startIndex
+	 * 			start Index of the sublist which we have to rotate
+	 * @param endIndex
+	 * 			end Index of the sublist which we have to rotate
+	 * @param rotCount
+	 * 			no. of rotations we want to perform
+	 */
 	public void rotateClockwise(int startIndex, int endIndex, int rotCount){
 		if(startIndex<=0 || endIndex>size()){
 			System.out.println("Invalid Start or End Index.");
@@ -73,6 +105,7 @@ public class MyLinkedList<E> {
 		}else{
 			rightNode = lastNode.getNext();			
 		}
+		// rotation
 		for(int rotation = 0; rotation<rotCount; rotation++){
 			Node<E> temp = firstNode;
 			while(temp.getNext()!=lastNode){
@@ -83,6 +116,7 @@ public class MyLinkedList<E> {
 			lastNode = temp;
 		}
 
+		//connect the rotated list to the original list
 		lastNode.setNext(rightNode);
 		if(startIndex == 1){
 			head = firstNode;
@@ -98,9 +132,14 @@ public class MyLinkedList<E> {
 	}
 	
 	
+	/**
+	 * Function to check whether Linked List has a Loop or not
+	 * @return boolean
+	 * 			true if Linked List has a Loop otherwise false.
+	 */
 	public boolean hasLoop(){
 		Node<E> tempNode = head;
-		head.getNext().getNext().setNext(head);
+//		head.getNext().getNext().setNext(head);
 		while(tempNode.getNext()!=null){
 			if(tempNode.isVisited()){
 				return true;
@@ -112,9 +151,16 @@ public class MyLinkedList<E> {
 	}
 	
 	
+	/**
+	 * Function to get the element of the Linked List at a particular index(based 0)
+	 * @param index
+	 * 			integer index ranges from 0 to size of the linked list.
+	 * @return 
+	 * 			return the element of the linked list at the given index.
+	 */
 	public E get(int index){
 		E result=null;
-		if(index<0){
+		if(index<0 || index>=size()){
 			result = null;
 		}
 		Node<E> tempNode = head;
