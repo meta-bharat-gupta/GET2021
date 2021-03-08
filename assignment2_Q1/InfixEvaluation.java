@@ -93,11 +93,9 @@ public class InfixEvaluation {
 			int type = tokenType(tokens[index]);
 			switch(type){
 				case 1:
-					System.out.println("Value");
 					values.push(Integer.parseInt(tokens[index]));
 					break;
 				case 2:
-					System.out.println("Operator");
 					if(operators.isEmpty()){
 						operators.push(tokens[index]);
 					}else{
@@ -123,7 +121,6 @@ public class InfixEvaluation {
 		}
 
 		while(!operators.isEmpty()){
-			System.out.println("while running");
 			int result = evaluate(operators.peek(), values.pop(), values.pop());
 			values.push(result);
 			operators.pop();
