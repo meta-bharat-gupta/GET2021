@@ -4,9 +4,20 @@ import java.util.List;
 
 import factoryForADT.Shape.ShapeType;
 
-
+// Factory Class to create an instance of particular shape.
 public class ShapeFactory {
 	
+	/**
+	 * Return the specific type of the Shape Object depending on the type.
+	 * @param shapeType
+	 * 			It will tell the type of the shape.
+	 * @param origin	
+	 * 			origin Point object.
+	 * @param list
+	 * 			list of parameters for different shapes.
+	 * @return Shape
+	 * 			returns the shape object.
+	 */
 	public static Shape createShape(ShapeType shapeType, Point origin, List<Integer> list){
 		if(shapeType == null){
 			return null;

@@ -28,7 +28,9 @@ public class MainClass {
 		return userChoice;
 	}
 	
+	// Main Class for menu driven approach
 	public static void main(String[] args) {
+		// Getting the new Screen by creating screen object.
 		Screen screen = new Screen();
 		while(true){
 			System.out.println("\n\n------Graphics Library -------");

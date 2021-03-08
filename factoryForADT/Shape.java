@@ -2,7 +2,7 @@ package factoryForADT;
 
 import java.util.Date;
 
-
+// Shape interface
 public interface Shape {
 	public double getArea();
 	public double getPerimeter();

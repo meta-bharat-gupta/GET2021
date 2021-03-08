@@ -169,7 +169,9 @@ public class Screen {
 	
 	
 	
-	
+	/**
+	 * Checks which shapes enclose the given point and display a boolean value.
+	 */
 	public void checkPoint(){
 		System.out.println("Enter the Point's Co-ordinates: ");
 		System.out.println("Enter X-Coordinate: ");
@@ -186,6 +188,11 @@ public class Screen {
 		
 	}
 	
+	
+	/**
+	 * private helper method for sorting the shapes based on 
+	 * the their area and displaying them in ascending order.
+	 */
 	private void sortOnArea(){
 		List<Shape> listOfShapes = new ArrayList<Shape>(shapeList);
 		Comparator<Shape> comparator = new Comparator<Shape>() {
@@ -205,6 +212,11 @@ public class Screen {
 		}
 	}
 	
+	
+	/**
+	 * private helper method for sorting the shapes based on 
+	 * the their perimeter and displaying them in ascending order.
+	 */
 	private void sortOnPerimeter(){
 		List<Shape> listOfShapes = new ArrayList<Shape>(shapeList);
 		Comparator<Shape> comparator = new Comparator<Shape>() {
@@ -224,6 +236,11 @@ public class Screen {
 		}
 	}
 	
+	
+	/**
+	 * private helper method for sorting the shapes based on 
+	 * the time they created and displaying them in ascending order.
+	 */
 	private void sortOnTime(){
 		List<Shape> listOfShapes = new ArrayList<Shape>(shapeList);
 		Comparator<Shape> comparator = new Comparator<Shape>() {
@@ -238,6 +255,12 @@ public class Screen {
 		}
 	}
 	
+	
+	/**
+	 * private helper method for sorting the shapes based on 
+	 * the their origin distance from the origin of the screen
+	 * and displaying them in ascending order.
+	 */
 	private void sortOnOriginDistance(){
 		List<Shape> listOfShapes = new ArrayList<Shape>(shapeList);
 		Comparator<Shape> comparator = new Comparator<Shape>() {
@@ -257,6 +280,12 @@ public class Screen {
 					listOfShapes.get(index).getOrigin().getX() + ","+listOfShapes.get(index).getOrigin().getY());
 		}
 	}
+	
+	
+	/**
+	 * This function is for sorting the shapes on the 
+	 * screen based on different parameters.
+	 */
 	public void sortShapes(){
 		System.out.println("1. Sort based on Area");
 		System.out.println("2. Sort based on Perimeter");
@@ -281,6 +310,10 @@ public class Screen {
 		}
 	}
 	
+	
+	/**
+	 * This function will display all the shapes present on the screen.
+	 */
 	public void displayShapes(){
 		if(isShapeListEmpty()){
 			System.out.println("List of Shapes is Empty.");

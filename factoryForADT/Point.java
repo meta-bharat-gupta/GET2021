@@ -1,5 +1,6 @@
 package factoryForADT;
 
+// Point class to store coordinates
 public class Point {
 	int X;
 	int Y;
