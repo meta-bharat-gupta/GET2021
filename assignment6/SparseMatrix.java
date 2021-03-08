@@ -90,7 +90,7 @@ final public class SparseMatrix {
 	public SparseMatrix addSparseMatrix(SparseMatrix secondSM){
 		SparseMatrix firstSM = this;
 		if(firstSM.totalCols!=secondSM.totalCols || firstSM.totalRows!=secondSM.totalRows){
-			System.out.println("Different Dimension Matrices can't be added.");
+//			System.out.println("Different Dimension Matrices can't be added.");
 			return null;
 		}
 		int noOfValuesInResultMatrix = findSizeOfResultMatrix(firstSM, secondSM);
@@ -269,7 +269,8 @@ final public class SparseMatrix {
 
 		// checking whether matrix are of different size
 		if ((firstSM.totalCols != secondSM.totalRows)){
-			System.out.println("Matrices can't be multiplied.");
+//			System.out.println("Matrices can't be multiplied.");
+			return null;
 		}
 
 		// transpose of second matrix
