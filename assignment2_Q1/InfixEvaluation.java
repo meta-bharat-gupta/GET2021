@@ -13,7 +13,7 @@ public class InfixEvaluation {
 		}else if(token.equals("&&") || token.equals("||")){
 			return 0;
 		}
-		return 4;
+		return -1;
 	}
 
 	
@@ -50,6 +50,35 @@ public class InfixEvaluation {
                 throw new UnsupportedOperationException("Cannot divide by zero");
 			result = firstInt / secondInt;
 			break;
+		case "&&":
+			if(firstInt==0 || secondInt==0)
+				result = 0;
+			result = 1;
+			break;
+		case "||":
+			if(firstInt==1 || secondInt==1)
+				result = 1;
+			else
+				result = 0;
+			break;
+		case ">=":
+			if(firstInt >= secondInt)
+				result = 1;
+			else
+				result = 0;
+			break;
+		case "==":
+			if(firstInt == secondInt)
+				result = 1;
+			else
+				result = 0;
+			break;
+		case "<=":
+			if(firstInt == secondInt)
+				result = 1;
+			else
+				result = 2;
+			break;
 		}
 		return result;
 	}
@@ -81,10 +110,8 @@ public class InfixEvaluation {
 					break;
 				case 3:
 					if(tokens[index].equals("(")){
-//						System.out.println("brackets");
 						operators.push(tokens[index]);
 					}else{
-//						System.out.println("right bracket");
 						while(!operators.peek().equals("(")){
 							int result = evaluate(operators.pop(), values.pop(), values.pop());
 							values.push(result);
