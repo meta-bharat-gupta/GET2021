@@ -30,6 +30,8 @@ public class MainClass {
 	
 	public static void main(String[] args) {
 		EmployeeCollection employeeList = new EmployeeCollection();
+		
+		// menu driven program
 		while(true){
 			System.out.println("1. To add employee");
 			System.out.println("2. To sort employee list");

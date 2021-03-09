@@ -1,11 +1,17 @@
 package assignment4_Q3;
 
 import java.util.ArrayList;
-//import java.util.List;
 import java.util.Stack;
 
 public class MolecularMass {
 	
+	/**
+	 * Return the atomic mass of the element
+	 * @param element
+	 * 			String representation of the element
+	 * @return integer
+	 * 			atomic weight of the element
+	 */
 	public int getAtomicWeight(String element){
 		int weight = 0;
 		if(element.equals("C"))
@@ -17,6 +23,14 @@ public class MolecularMass {
 		return weight;
 	}
 	
+	
+	/**
+	 * Calculate the Molecular Mass of the compound and returns it.
+	 * @param compound
+	 * 			String representation of the compound formula.
+	 * @return integer
+	 * 			Weight of the Molecular Compound
+	 */
 	public int calculateMass(String compound){
 		Stack<String> weightStack = new Stack<String>();
 		ArrayList<String> compoundFormula = getFormula(compound);
@@ -47,7 +61,13 @@ public class MolecularMass {
 	}
 	
 	
-	
+	/**
+	 * Converts the compound formula into the tokens.
+	 * @param compound
+	 * 			String representation of the molecular compound
+	 * @return ArrayList
+	 * 			tokens of the molecular formula as an arraylist
+	 */
 	public ArrayList<String> getFormula(String compound){
 		ArrayList<String> formulaTokens = new ArrayList<String>();
 		//checking whether string is null or not
@@ -73,7 +93,13 @@ public class MolecularMass {
 	}
 	
 	
-	
+	/**
+	 * Checks whether a token is number or not.
+	 * @param str
+	 * 			a token from the arraylist
+	 * @return
+	 * 		true if token is number otherwise false
+	 */
 	public boolean isNumber(String str){
 		try{
 			Integer.parseInt(str);

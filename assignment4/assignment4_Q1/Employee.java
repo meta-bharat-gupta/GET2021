@@ -5,12 +5,14 @@ public class Employee {
 	private String empAddress;
 	private int empId;
 	
+	// Constructor for Employee Class
 	public Employee(String empName, String empAddress, int id){
 		this.empAddress = empAddress;
 		this.empName = empName;
 		this.empId = id;
 	}
 	
+	// Getters and Setter for class attributes
 	public String getName() {
 		return empName;
 	}
@@ -30,6 +32,7 @@ public class Employee {
 		this.empId = empId;
 	}
 	
+	// Print an Employee Object
 	public void print(){
 		System.out.println("Emp Id : "+	this.empId+", Emp Name : "+this.empName+
 				", Emp Address : "+this.empAddress);
