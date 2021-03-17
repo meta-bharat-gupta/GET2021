@@ -46,6 +46,14 @@ public class Employee {
 		this.salary = salary;
 	}
 
+	public int compareTo(Employee secondEmp){
+		Employee firstEmp = this;
+		if(firstEmp.getSalary()!=secondEmp.getSalary()){
+			return firstEmp.getSalary() - secondEmp.getSalary();
+		}else{
+			return secondEmp.getAge()-firstEmp.getAge();
+		}
+	}
 	// Print an Employee Object
 	public String toString(){
 		return ("Emp Id : "+ this.empId+", Emp Name : "+this.empName+
