@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+    <title>Meta Parking</title>
+  </head>
+  <body>
+    <nav class="navigation">
+      <ul>
+        <li><a href="#employee">Add Employee</a></li>
+        <li><a href="#vehicle">Add Vehicle</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+    </nav>
+
+    <hr>
+
+    <main>
+
+      <section id="employee" class="employee-section">
+        <h2>Employee Information</h2>
+        <form class="employee-form" action="index.html" method="post">
+          Full Name <input type="text" name="name"/> <br/>
+          Gender <input type="radio" name="gender" />Male
+          <input type="radio" name="gender"/>Female <br>
+          Email Id <input type="email" /> <br>
+          Password <input type="password" name="password" /> <br>
+          Confirm Password <input type="password" name="password" /> <br>
+          Contact Number <input type="text" name="contact"/> <br>
+          <input type="submit" value="Submit">
+        </form>
+      </section>
+
+      <hr>
+
+      <section id="vehicle">
+        <h2>Vehicle Information</h2>
+        <form action="index.html">
+          Vehicle Make <input type="text" name="vehicle-make"/> <br/>
+          Vehicle Model <input type="text" name="vehicle-model" /><br>
+          Type <input type="text" name="vehicle-type" /> <br>
+          Vehicle Number <input type="text" name="vehicle-number" /> <br>
+          Employee Id <input type="text" name="emp-id" /> <br>
+          Identification <textarea name="name" rows="8" cols="80">Color, mark, visible accessory</textarea> <br>
+          <input type="submit" value="Submit">
+        </form>
+      </section>
+
+      <hr>
+
+      <section id="feedback">
+        <h2>Feedback : Get in Touch</h2>
+        <form action="index.html">
+          <input type="text" name="name" required placeholder="Your Name"/> <br/>
+          <input type="email" name="email" required placeholder="Your email"/><br>
+          <input type="text" name="subject" required placeholder="Subject"/> <br>
+          <textarea name="name" rows="8" cols="80">Message</textarea> <br>
+          <input type="submit" value="Send Feedback">
+        </form>
+      </section>
+
+      <hr>
+
+      <section id="pricing">
+        <h2>Pricing Plans for Parking</h2>
+
+        <div>
+          <div class="price-plan">
+            <h3>CYCLE</h3>
+            <h2>100$ per month</h2>
+            <div>Daily : 5$</div>
+            <div>Monthly : 100$</div>
+            <div>Yearly : 500$</div>
+          </div>
+          <div class="price-plan">
+            <h3>MOTOR CYCLE</h3>
+            <h2>200$ per month</h2>
+            <div>Daily : 10$</div>
+            <div>Monthly : 200$</div>
+            <div>Yearly : 1000$</div>
+          </div>
+          <div class="price-plan">
+            <h3>FOUR WHEELERS</h3>
+            <h2>500$ per month</h2>
+            <div>Daily : 20$</div>
+            <div>Monthly : 500$</div>
+            <div>Yearly : 3500$</div>
+          </div>
+        </div>
+      </section>
+    </main>
+      </body>
+</html>
