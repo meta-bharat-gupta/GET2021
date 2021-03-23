@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+    <title>Meta Parking</title>
+  </head>
+  <body>
+    
+    <!-- Navigation  -->
+    <nav class="navigation">
+        <ul>
+          <li><a href="#header">HOME</a></li>
+          <li><a href="#employee">EMPLOYEE</a></li>
+          <li><a href="#vehicle">VEHICLE</a></li>
+          <li><a href="#feedback">FEEDBACK</a></li>
+          <li><a href="#pricing">PRICING</a></li>
+        </ul>
+    </nav>
+
+<!-- Header and Cover Image -->
+    <header id="header" class="cover-image">
+        <div class="header-text">
+          <h1>Welcome to Meta Parking</h1>
+        </div>
+    </header>
+
+
+    <main>
+
+      <!-- Employee Section -->
+      <section id="employee" class="employee-section">
+        <button class="collapsible">
+          <h2 class="">Employee Information</h2>
+        </button>
+        <div class="content">
+          <form class="form" action="index.html" method="post">
+            <table>
+              <tr>
+                <td>Full Name</td>
+                <td><input type="text" name="name"/></td>
+              </tr>
+              <tr>
+                <td>Gender</td>
+                <td><input type="radio" name="gender" />Male
+                  <input type="radio" name="gender"/>Female</td>
+              </tr>
+              <tr>
+                <td>Email Id</td>
+                <td><input type="email" /></td>
+              </tr>
+              <tr>
+                <td>Password</td>
+                <td><input type="password" name="password" /> </td>
+              </tr>
+              <tr>
+                <td>Confirm Password</td>
+                <td><input type="password" name="password" /></td>
+              </tr>
+              <tr>
+                <td>Contact Number</td>
+                <td><input type="text" name="contact"/></td>
+              </tr>
+              <tr>
+                <td colspan="2"><input class="btn" type="submit" value="Submit"></td>
+              </tr>
+            </table>
+  
+          </form>
+        </div>
+      </section>
+
+      
+      <!-- Vehicle Section -->
+      <section id="vehicle">
+        <button class="collapsible">
+          <h2 class="">Vehicle Information</h2>
+        </button>
+        <div class="content">
+          <form action="index.html">
+            <table>
+              <tr>
+                <td>Vehicle Make</td>
+                <td><input type="text" name="vehicle-make"/></td>
+              </tr>
+              <tr>
+                <td>Vehicle Model</td>
+                <td><input type="text" name="vehicle-model" /></td>
+              </tr>
+              <tr>
+                <td>Type</td>
+                <td><input type="text" name="vehicle-type" /> </td>
+              </tr>
+              <tr>
+                <td>Vehicle Number</td>
+                <td><input type="text" name="vehicle-number" /> </td>
+              </tr>
+              <tr>
+                <td>Employee Id </td>
+                <td><input type="text" name="emp-id" /></td>
+              </tr>
+              <tr>
+                <td>Identification</td>
+                <td><textarea name="name" rows="8" cols="80">Color, mark, visible accessory</textarea></td>
+              </tr>
+              <tr>
+                <td colspan="2"><input class="btn" type="submit" value="Submit"></td>
+              </tr>
+            </table>
+            
+          </form>
+        </div>
+        
+      </section>
+
+    
+      <!-- FeedBack Section -->
+      <section id="feedback">
+        <h2 class="section-heading">Feedback : Get in Touch</h2>
+        <form action="index.html">
+          <table>
+            <tr>
+              <td><input type="text" name="name" required placeholder="Your Name"/></td>
+            </tr>
+            <tr>
+              <td><input type="email" name="email" required placeholder="Your email"/></td>
+            </tr>
+            <tr>
+              <td><input type="text" name="subject" required placeholder="Subject"/></td>
+            </tr>
+            <tr>
+              <td><textarea name="name" rows="8" cols="80">Message</textarea></td>
+            </tr>
+            <tr>
+              <td><input class="btn" type="submit" value="Send Feedback"></td>
+            </tr>
+          </table>
+      
+        </form>
+      </section>
+
+     
+      <!-- Pricing Section -->
+      <section id="pricing">
+        <h2 class="section-heading ">Pricing Plans for Parking</h2>
+        
+        <div class="price-plan-container">
+          <div class="price-plan">
+            <h3>CYCLE</h3>
+            <div class="price">
+              <h2>100$</h2>
+              <p>Per Month</p>
+            </div>
+            <div>Daily : 5$</div>
+            <div>Monthly : 100$</div>
+            <div>Yearly : 500$</div>
+            <div><input type="button" value="Purchase Plan" class="btn"></div>
+          </div>
+          <div class="price-plan">
+            <h3>MOTOR CYCLE</h3>
+            <div class="price">
+              <h2>200$</h2>
+              <p>Per Month</p>
+            </div>
+            <div>Daily : 10$</div>
+            <div>Monthly : 200$</div>
+            <div>Yearly : 1000$</div>
+            <div><input type="button" value="Purchase Plan" class="btn"></div>
+          </div>
+          <div class="price-plan">
+            <h3>FOUR WHEELERS</h3>
+            <div class="price">
+              <h2>500$</h2>
+              <p>Per Month</p>
+            </div>
+            <div>Daily : 20$</div>
+            <div>Monthly : 500$</div>
+            <div>Yearly : 3500$</div>
+            <div><input type="button" value="Purchase Plan" class="btn"></div>
+          </div>
+        </div>
+      </section>
+    
+    </main>
+  
+  </body>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+    </script>
+</html>
