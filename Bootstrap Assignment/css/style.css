@@ -5,3 +5,14 @@
 .blog-pages{
     margin: 2rem;
 }
+
+.nav{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.nav::-webkit-scrollbar {
+    display: none;
+  }
