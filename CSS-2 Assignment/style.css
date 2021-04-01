@@ -127,7 +127,7 @@ section{
 
 /* Screenshot Section */
 .screenshot-section{
-    background-image: url("/images/images/bodybg.png");
+    background-image: url("./images/images/bodybg.png");
 }
 
 .screenshot{
@@ -179,7 +179,7 @@ section{
 
 /* Reviews Section */
 .review-section{
-    background-image: url("/images/images/bodybg.png");
+    background-image: url("./images/images/bodybg.png");
 }
 .reviews{
     display: flex;
@@ -227,7 +227,7 @@ blockquote{
 
 /* Footer Section */
 .footer-section{
-    background-image: url("/images/images/downloadbg.png");
+    background-image: url("./images/images/downloadbg.png");
     display: flex;
     flex-direction: row;
     padding-bottom: 0px;
