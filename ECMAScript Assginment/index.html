@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://kit.fontawesome.com/81cb114d83.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Meta Parking</title>
+</head>
+
+<body>
+
+  <!-- Navigation  -->
+  <nav class="navigation">
+    <ul>
+      <li><a href="#header">HOME</a></li>
+      <li><a href="#employee">EMPLOYEE</a></li>
+      <li><a href="#vehicle">VEHICLE</a></li>
+      <li><a href="#pricing">PRICING</a></li>
+      <li><a href="#feedback">FEEDBACK</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header and Cover Image -->
+  <header id="header" class="cover-image">
+    <div class="header-text">
+      <h1>Welcome to Meta Parking</h1>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- Employee Section -->
+    <section id="employee" class="employee-section">
+      <button class="collapsible">
+        <h2>Employee Registration</h2>
+
+      </button>
+
+      <div class="content">
+        <div id="user-info"></div>
+
+        <form id="empForm">
+          <div class="field">
+            <i class="far fa-user"></i>
+            <input type="text" name="name" placeholder="Enter your name">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+
+          <div class="field inactive">
+            <i class="fas fa-heart"></i>
+            <select name="gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+
+          <div class="field inactive">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="email" placeholder="Email">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+
+          <div class="field inactive">
+            <i class="fas fa-key"></i>
+            <input type="password" name="password" placeholder="Password">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+
+          <div class="field inactive">
+            <i class="fas fa-key"></i>
+            <input type="password" name="confirm" placeholder="Confirm Password">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+
+          <div class="field inactive">
+            <i class="fas fa-key"></i>
+            <input type="text" name="contact" placeholder="Contact Number">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+
+          <div class="field inactive">
+            <i class="fas fa-heart"></i>
+            <p>Thank You, Get Registration Id</p>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </form>
+        <div class="error-msg" id="error-info"></div>
+      </div>
+    </section>
+
+
+    <!-- Vehicle Section -->
+    <section id="vehicle" class="vehicle-section">
+      <button class="collapsible">
+        <h2>Vehicle Registration</h2>
+      </button>
+
+      <div class="content">
+        <div id="user-info"></div>
+
+        <form id="vehicleForm">
+          <div class="field">
+            <i class="far fa-id-card"></i>
+            <input type="text" name="user_id" placeholder="Enter your Registration Id">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+
+          <div class="field inactive">
+            <i class="fas fa-car"></i>
+            <input type="text" name="vehicleName" placeholder="Vehicle Name">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+
+          <div class="field inactive">
+            <i class="fas fa-motorcycle"></i>
+            <select name="vehicleType">
+              <option value="Cycle">Cycle</option>
+              <option value="Motor Cycle">Motor Cycle</option>
+              <option value="Four Wheeler">Four Wheeler</option>
+            </select>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+
+          <div class="field inactive">
+            <i class="fas fa-barcode"></i>
+            <input type="text" name="vehicleNumber" placeholder="Vehicle Number">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+
+          <div class="field inactive">
+            <i class="fas fa-fingerprint"></i>
+            <textarea name="Identification">Identification</textarea>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+
+          <div class="field inactive">
+            <i class="fas fa-heart"></i>
+            <p>Thank You, Choose Your Pass</p>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </form>
+        <div class="error-msg" id="error-info2"></div>
+      </div>
+    </section>
+
+
+    <!-- Pass Section -->
+    <section id="pricing" class="pricing-section">
+      <button class="collapsible">
+        <h2>Parking Pass Pricing</h2>
+      </button>
+
+      <div class="content">
+        <div class="text-center">
+          <label for="currency">Select currency</label>
+          <select name="currency" id="currency" onchange="displayPlan()">
+            <option value="usd" selected>USD</option>
+            <option value="yen">YEN</option>
+          </select>
+        </div>
+
+        <div class="price-plan-container">
+          <div class="price-plan Cycle">
+            <h3>CYCLE</h3>
+            <div class="price">
+              <h2>100<span class="currency-symbol">$</span></h2>
+              <p>Per Month</p>
+            </div>
+            <div>Daily : 5<span class="currency-symbol">$</span></div>
+            <div>Monthly : 100<span class="currency-symbol">$</span></div>
+            <div>Yearly : 500<span class="currency-symbol">$</span></div>
+            <a href="" class="btn">Get Pass</a>
+          </div>
+
+          <div class="price-plan Motorcycle">
+            <h3>MOTOR CYCLE</h3>
+            <div class="price">
+              <h2>200<span class="currency-symbol">$</span></h2>
+              <p>Per Month</p>
+            </div>
+            <div>Daily : 10<span class="currency-symbol">$</span></div>
+            <div>Monthly : 200<span class="currency-symbol">$</span></div>
+            <div>Yearly : 1000<span class="currency-symbol">$</span></div>
+            <a href="" class="btn">Get Pass</a>
+          </div>
+
+          <div class="price-plan Car">
+            <h3>FOUR WHEELERS</h3>
+            <div class="price">
+              <h2>500<span class="currency-symbol">$</span></h2>
+              <p>Per Month</p>
+            </div>
+            <div>Daily : 20<span class="currency-symbol">$</span></div>
+            <div>Monthly : 500<span class="currency-symbol">$</span></div>
+            <div>Yearly : 3500<span class="currency-symbol">$</span></div>
+            <a href="" class="btn">Get Pass</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="feedback">
+      <h2 class="section-heading">Feedback : Get in Touch</h2>
+      <div class="text-center">
+        <form action="index.html">
+          <table>
+            <tr>
+              <td><input type="text" name="name" required placeholder="Your Name" /></td>
+            </tr>
+            <tr>
+              <td><input type="email" name="email" required placeholder="Your email" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" name="subject" required placeholder="Subject" /></td>
+            </tr>
+            <tr>
+              <td><textarea name="name" rows="8" cols="50">Message</textarea></td>
+            </tr>
+            <tr>
+              <td><input class="btn" type="submit" value="Send Feedback"></td>
+            </tr>
+          </table>
+
+        </form>
+      </div>
+
+    </section>
+
+  </main>
+  <script src="./js/index.js"></script>
+  <script src="./js/Employee.js"></script>
+  <script src="./js/PricePlan.js"></script>
+  <script src="./js/Vehicle.js"></script>
+</body>
+
+</html>

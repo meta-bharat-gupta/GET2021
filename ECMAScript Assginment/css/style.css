@@ -1,0 +1,277 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow-x: hidden;
+}
+
+/* NAVIGATION SECTION */
+.navigation{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  display: inline-block;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+
+/* Header Section */
+header{
+  height: 100vh;
+}
+
+.cover-image{
+  background-image: url("https://images.unsplash.com/photo-1506521781263-d8422e82f27a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cGFya2luZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.header-text{
+  position: absolute;
+  font-size: 2em;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  color: #eee;
+  transform: translate(-50%,-50%);
+}
+
+.btn{
+  display: inline-block;
+  padding: 10px 30px;
+  border: 2px solid #333;
+  color: #000;
+  margin-top: 15px;
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: 300;
+  border-radius: 20px;
+}
+
+.btn:hover{
+  background-color:rgba(0, 0, 0, 0.5);
+}
+
+/* Employee Section */
+.content{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #777;
+  transition: background 0.5s ease;
+  position: relative;
+}
+
+.field{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  height: 50px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+}
+
+.field i{
+  padding: 10px;
+  cursor: pointer;
+
+}
+
+div.inactive{
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 50%);
+}
+
+div.active{
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-50%, -50%);
+}
+
+.field input, 
+.field select,
+textarea{
+  background: none;
+  border: none;
+  flex: 1;
+  height: 100%;
+  outline: none;
+}
+
+.error{
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+.error-msg{
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  margin-top: 100px;
+  color: red;
+}
+
+#user-info{
+  height: 50px;
+  width: 100%;
+  font-size: 16px;
+  text-align: center;
+  margin: 10px auto;
+  color: #111;
+  font-weight: bold;
+}
+
+section{
+  margin: 0;
+  padding: 30px 0;
+  background-color: #eeeeee;
+}
+
+.section-heading{
+  background-color: #777;
+  color: white;
+  padding: 35px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+}
+
+
+/* input tags */
+input{
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+}
+textarea{
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 5px;
+}
+
+
+/* Pricing Section */
+.price-plan-container{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin: 5% 0;
+}
+
+.price-plan{
+  display: inline-block;
+  text-align: center;
+  border: 2px solid #5e5e5e;
+  border-radius: 20px;
+  padding: 20px;
+  width: 20%;
+  min-height: 350px;
+}
+
+.price-plan div{
+  text-align: center;
+  line-height: 20px;
+  margin-top: 10px;
+}
+.price-plan h3{
+  height: 50px;
+}
+.price h2,
+.price p{
+  margin: 0;
+  color: rgb(87, 139, 80);
+}
+
+.price{
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 110px;
+  height: 100px;
+  border: 2px solid #180202;
+  border-radius: 50%;
+}
+
+
+
+/* Collapsable Classes */
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  font-size: 18px;
+}
+
+
+.activate, .collapsible:hover {
+  background-color: #555;
+}
+
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background-color: #f1f1f1;
+}
+
+table{
+  line-height: 20px;
+  margin: 0 auto;
+
+}
+
+td:last-child{
+  padding: 10px;
+  text-align: center;
+}
+
+tr:last-child{
+  text-align: center;
+}
