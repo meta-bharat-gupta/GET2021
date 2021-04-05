@@ -260,3 +260,18 @@ textarea{
   transition: max-height 0.3s ease-out;
   background-color: #f1f1f1;
 }
+
+table{
+  line-height: 20px;
+  margin: 0 auto;
+
+}
+
+td:last-child{
+  padding: 10px;
+  text-align: center;
+}
+
+tr:last-child{
+  text-align: center;
+}

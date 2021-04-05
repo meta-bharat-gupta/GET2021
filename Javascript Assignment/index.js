@@ -39,12 +39,12 @@ function checkEmail(mail) {
 }
 
 function checkPassword(password) {
-    var passw = /^[A-Za-z0-9]\w{7,14}$/;
+    var passw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
     if (password.value.match(passw)) {
         return true;
     }
     else {
-        error_msg.innerHTML = "Password must have atleast 8 characters."
+        error_msg.innerHTML = "Password must have Minimum eight characters, at least one letter, one number and one special character."
         return false;
     }
 }
@@ -75,6 +75,21 @@ function nextField(parent, nextInput){
 }
 
 
+function displayPlan() {
+    var selectedCurrency = document.querySelector('#currency');
+    var currencySymbols = document.querySelectorAll('.currency-symbol');
+    currencySymbols.forEach(symbol => {
+        if(selectedCurrency.value == 'usd'){
+            symbol.innerHTML = "$"
+        }
+        if(selectedCurrency.value == 'yen'){
+            symbol.innerHTML = "¥"
+        }
+    });
+
+}
+
+
 function animatedForm(){
 
     var arrows = document.querySelectorAll(".fa-arrow-right");
@@ -92,7 +107,7 @@ function animatedForm(){
                 // var content = document.querySelector('.content');
                 // content.style = "";
                 // document.getElementById("empForm").submit();
-                Employee['id'] = "123";
+                Employee['id'] = Employee["name"] + Math.floor(Math.random() * 10);
                 user_info.innerText = `Your Registration Id is ${Employee['id']}`;
                 
                 return;
@@ -118,9 +133,13 @@ function animatedForm(){
                 nextField(parent, nextInput);
             }else if(input.name == "contact" && checkContact(input)){
                 nextField(parent, nextInput);
-            }else if(input.name == 'user_id' && input.value == Employee['id']){
-                Vehicle[input.name] = input.value;
-                nextField(parent, nextInput);
+            }else if(input.name == 'user_id' ){
+                if(input.value != Employee['id']){
+                    document.querySelector('#error-info2').innerHTML = "Registration Id is Invalid."
+                }else{
+                    Vehicle[input.name] = input.value;
+                    nextField(parent, nextInput);
+                }
             }else if(input.tagName == 'SELECT'){
                 Vehicle[input.name] = input.value;
                 var cycle = document.querySelector('.Cycle');
@@ -152,8 +171,6 @@ function animatedForm(){
     });
 
 }
-
-
 
 
 animatedForm();
